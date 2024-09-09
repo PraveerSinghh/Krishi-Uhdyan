@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krishi Udhyan - Input Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Krishi Udhyan</h1>
+            <div class="language-selector">
+                <label for="language">Choose Language:</label>
+                <select id="language" onchange="changeLanguage()">
+                    <option value="en">English</option>
+                    <option value="hi">Hindi (हिन्दी)</option>
+                    <option value="hi">Assamese (অসমীয়া)</option>
+                    <option value="hi">Bengali (বাংলা)</option>
+                    <option value="hi">Bodo (बड़ो)</option>
+                    <option value="hi">Dogri (डोगरी)</option>
+                    <option value="hi">Gujarati (ગુજરાતી)</option>
+                    <option value="hi">Kannada (ಕನ್ನಡ)</option>
+                    <option value="hi">Kashmiri (کٲشُر)</option>
+                    <option value="hi">Konkani (कोंकणी / ಕೊಂಕಣಿ)</option>
+                    <option value="hi">Maithili (मैथिली)</option>
+                    <option value="hi">Malayalam (മലയാളം)</option>
+                    <option value="hi">Manipuri (মৈতৈলোন্)</option>
+                    <option value="hi">Marathi (मराठी)</option>
+                    <option value="hi">Nepali (नेपाली)</option>
+                    <option value="hi">Oriya (ଓଡ଼ିଆ)</option>
+                    <option value="hi">Punjabi (ਪੰਜਾਬੀ)</option>
+                    <option value="hi">Sanskrit (संस्कृतम्)</option>
+                    <option value="hi">Santali (ᱥᱟᱱᱛᱟᱲᱤ)</option>
+                    <option value="hi">Sindhi (سنڌي / सिन्धी)</option>
+                    <option value="hi">Tamil (தமிழ்)</option>
+                    <option value="hi">Telugu (తెలుగు)</option>
+                    <option value="hi">Urdu (اُردُو)</option>
+                </select>
+            </div>
+        </header>
+        <main>
+            <form id="agricultureForm" action="output.html" method="GET" enctype="multipart/form-data">
+                <h2>Input Details</h2>
+
+                <!-- Soil Report Section -->
+                <fieldset>
+                    <legend>Upload Your Soil Report</legend>
+                    <div class="upload-container">
+                        <label for="soilReport" class="upload-label">
+                            <img src="./icon.png" alt="Upload Icon" class="upload-icon">
+                            <p>Click to Upload PDF</p>
+                        </label>
+                        <input type="file" id="soilReport" name="soilReport" accept=".pdf" required onchange="showFileName()">
+                        <p id="fileName" class="file-name"></p>
+                    </div>
+                </fieldset>
+
+                <!-- Other Inputs -->
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" required class="input-field"><br>
+
+                <label for="budget">Budget:</label>
+                <input type="number" id="budget" name="budget" required class="input-field"><br>
+
+                <label for="dateSeason">Date/Season:</label>
+                <input type="date" id="dateSeason" name="dateSeason" required class="input-field">
+                <select id="seasonType" name="seasonType" required class="input-field">
+                    <option value="spring">Spring</option>
+                    <option value="summer">Summer</option>
+                    <option value="autumn">Autumn</option>
+                    <option value="winter">Winter</option>
+                    <option value="winter">Monsoon</option>
+                </select><br>
+
+                <!-- BPL Option as Radio Buttons -->
+                <div class="bpl-option">
+                    <label for="bpl-Yes">Do you come under BPL?</label><br>
+                    <input type="radio" id="bplYes" name="bpl" value="yes" required>
+                    <label for="bplYes">Yes</label>
+                    <input type="radio" id="bplNo" name="bpl" value="no" required>
+                    <label for="bplNo">No</label>
+                </div>
+
+                <button type="submit" class="interactive-button">Submit</button>
+            </form>
+        </main>
+    </div>
+</body>
+</html>
